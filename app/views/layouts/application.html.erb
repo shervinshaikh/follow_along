@@ -22,13 +22,10 @@
     <%#= render 'shared/static_header' %>
   <%# end %>
 
-  <div class="<%= params[:controller] == "home" ? '' : 'container' %>">
+  <%= yield :controls %>
 
-    <%= yield %>
+  <%= yield %>
 
-    <%= render "shared/footer" %>
-
-  </div><!-- .container -->
 
 
   <%= javascript_include_tag "application" %>
