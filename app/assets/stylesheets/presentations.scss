@@ -41,15 +41,7 @@ html, body {
 }
 
 
-.presentation-container,
-.feedback-container {
-  float: left;
 
-  @media (max-width: 630px) {
-    float: none !important;
-    width: 100% !important;
-  }
-}
 
 .presentation-container {
   width: 75%;
@@ -59,4 +51,16 @@ html, body {
 .feedback-container {
   width: 25%;
   outline: 1px solid blue;
+}
+
+.presentation-container,
+.feedback-container {
+  @include border-box;
+  float: left;
+
+  @media (max-width: 630px) {
+    float: none;
+    margin-bottom: 20px;
+    width: 100%;
+  }
 }

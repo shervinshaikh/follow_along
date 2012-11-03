@@ -14,7 +14,7 @@ group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
   # gem 'guard-rspec', '1.2.1'
-  # gem 'guard-spork', '1.2.0'  
+  # gem 'guard-spork', '1.2.0'
   # gem 'spork', '0.9.2'
 end
 
@@ -37,13 +37,13 @@ gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn' 
+# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
