@@ -24,13 +24,8 @@
 
   <%= yield :controls %>
 
-  <div class="<%= params[:controller] == "home" ? '' : 'container' %>">
+  <%= yield %>
 
-    <%= yield %>
-
-    <%= render "shared/footer" %>
-
-  </div><!-- .container -->
 
 
   <%= javascript_include_tag "application" %>
