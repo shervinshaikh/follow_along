@@ -53,6 +53,19 @@ $header-height: 90px;
   outline: 1px solid blue;
 }
 
+.pdf-container {
+  margin: 0 auto;
+  outline:1px solid black;
+}
+
+canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .presentation-container,
 .feedback-container {
   @include border-box;
