@@ -22,6 +22,8 @@
     <%#= render 'shared/static_header' %>
   <%# end %>
 
+  <%= yield :controls %>
+
   <div class="<%= params[:controller] == "home" ? '' : 'container' %>">
 
     <%= yield %>
