@@ -19,24 +19,14 @@
 
 
 
-.landing-main {
-
-  img {
-    border: 1px solid $med-gray;
-    max-width: 100%;
-    outline: 1px solid blue !important;
-
-    @media (max-width: 630px) { display: none; }
-  }
-}
-
-
 .landing-cta {
   @include inset-box-shadow(0, 10px, 5px, -8px, lighten($med-gray, 5));
   padding: 75px 0;
 
   h2 {
     color: lighten($dark-gray, 15);
+    text-align: center;
+    margin-bottom: 35px;
   }
 
   p {
@@ -47,9 +37,8 @@
 }
 
 .section-title {
-  outline: 1px solid red;
   // Light main section header
-  color: lighten($gray-text, 20);
+  color: lighten($gray-text, 10);
   margin-bottom: 50px;
   text-align: center;
 
@@ -71,12 +60,11 @@
 .landing-main {
   background-color: #08c;
   color: white;
-  // padding: 100px 0 0;
+
   padding: 50px 0;
   text-align: center;
 
   h1 {
-    // margin-top: 75px;
     @include bold(3em);
     margin-bottom: 30px;
 
