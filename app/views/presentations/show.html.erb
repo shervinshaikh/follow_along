@@ -13,8 +13,8 @@
   </div>
 <% end %>
 
-<div class="presentation-container">
-  <canvas id="the-canvas" style="border:1px solid black"></canvas>
+<div class="pdf-container">
+  <canvas id="pdf-renderer"></canvas>
 </div>
 
 <div class="feedback-container">
@@ -41,8 +41,8 @@
 
     var pdfDoc = null,
         pageNum = 1,
-        scale = 0.8,
-        canvas = document.getElementById('the-canvas'),
+        scale = 1,
+        canvas = document.getElementById('pdf-renderer'),
         ctx = canvas.getContext('2d');
 
     //
