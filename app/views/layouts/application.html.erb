@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FollowAlong</title>
+  <title>Follow Me | <%= yield(:toptitle) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :head %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!--header-->
+  <div id="header">
+    <%= render :partial => "layouts/header" %>
+  </div>
+  <!--/header-->
 
-<%= yield %>
+  <div class='clearfix'></div>
+  <%= render :partial => "layouts/menu" %>
 
+  <%= yield :body %>
+
+  <div class="container" id="container">
+    
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <%= render :partial => "layouts/footer" %>
+  </div>
 </body>
 </html>
