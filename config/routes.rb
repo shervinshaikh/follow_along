@@ -3,9 +3,6 @@ FollowAlong::Application.routes.draw do
   resources :users
   resources :presentations
 
-  # Needs to be in own controller - TODO
-  match '/slideshow',  to: 'home#slideshow'
-
   match '/dashboard' => "users#dashboard", as: "dashboard"
 
   match 'signup'      => 'users#new',     as: 'signup'
