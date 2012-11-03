@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FollowAlong</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width">
+  <title>FollowAlong | <%= yield(:title) %></title>
+  <%= stylesheet_link_tag :followalong %>
   <%= csrf_meta_tags %>
+  <!-- <link rel="shortcut icon" type="image/ico" href="/favicon.gif" /> -->
+
+
 </head>
 <body>
 
-<%= yield %>
+  <%# if signed_in? %>
+    <%= render 'shared/header' %>
+  <%# else %>
+    <%#= render 'shared/static_header' %>
+  <%# end %>
+
+  <div class="<%= params[:controller] == "home" ? '' : 'container' %>">
+
+    <%= yield %>
+
+    <%= render "shared/footer" %>
+
+  </div><!-- .container -->
+
+
+  <%= javascript_include_tag "application" %>
+  <%= yield :javascript_includes %>
 
 </body>
 </html>
