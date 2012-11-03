@@ -7,8 +7,8 @@
     <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
   </div>
 
-  <div>
-    <canvas id="the-canvas" style="border:1px solid black"></canvas>
+  <div class="pdf-container">
+    <canvas id="pdf-renderer"></canvas>
   </div>
 
   <!-- Use latest PDF.js build from Github -->
@@ -31,8 +31,8 @@
 
     var pdfDoc = null,
         pageNum = 1,
-        scale = 0.8,
-        canvas = document.getElementById('the-canvas'),
+        scale = 1,
+        canvas = document.getElementById('pdf-renderer'),
         ctx = canvas.getContext('2d');
 
     //
@@ -57,6 +57,7 @@
       document.getElementById('page_num').textContent = pageNum;
       document.getElementById('page_count').textContent = pdfDoc.numPages;
     }
+    
 
     //
     // Go to previous page
