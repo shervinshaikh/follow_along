@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :must_be_logged_in,              except: [:new, :create]
+  before_filter :must_be_logged_in, except: [:new, :create]
 
   def new
     @user = User.new

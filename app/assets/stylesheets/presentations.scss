@@ -1,4 +1,3 @@
-$header-height: 90px;
 
 /* Max browser dimensions to enable full canvas height/width */
 html, body {
@@ -7,6 +6,10 @@ html, body {
   margin: 0px;
 }
 
+// -----------------------
+//    PLAYER CONTROLS
+// -----------------------
+$header-height: 90px;
 .controls {
   background-color: #262626;
   font-weight: bold;
@@ -40,9 +43,6 @@ html, body {
   margin-top: ($header-height / 2) - 15px;
 }
 
-
-
-
 .presentation-container {
   width: 75%;
   outline: 1px solid red;
@@ -75,5 +75,36 @@ canvas {
     float: none;
     margin-bottom: 20px;
     width: 100%;
+  }
+}
+
+
+
+
+
+
+// -----------------------
+//    DASHBOARD
+// -----------------------
+.dashboard-container {
+  padding: 25px 0;
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.pres-box {
+  @extend %whitebox;
+  color: $gray-text;
+  padding: 10px;
+  margin-bottom: 15px;
+
+  .pres-title {
+    @include bold(1.2em);
+    float: left;
+    margin-top: 5px;
   }
 }
