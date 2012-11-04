@@ -1,4 +1,20 @@
-<% unless params[:student].present? %>
+<% if params[:student].present? %>
+
+<div class="student-header">
+  <div class="container">
+    <div class="row">
+      <div class="span-16">
+
+        <a href="#" id="star-slide" class="btn btn-green left">Star slide</a>
+        <a href="#" id="add-notes" class="btn btn-blue right">Add notes</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% else %>
+
   <% content_for :controls do %>
     <div class="controls">
       <div class="container">
@@ -23,6 +39,7 @@
       </div>
     </div>
   <% end %>
+
 <% end %>
 
 <div class="presentation-container <%= params[:student].present? ? 'student-pres' : '' %>">

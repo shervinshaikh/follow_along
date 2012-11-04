@@ -6,7 +6,8 @@
     // security restrictions, we have to use a file server with special headers
     // (CORS) - most servers don't support cross-origin browser requests.
     //
-    var url = 'http://cdn.mozilla.net/pdfjs/tracemonkey.pdf';
+    // var url = 'http://cdn.mozilla.net/pdfjs/tracemonkey.pdf';
+    var url = '/pdf/test.pdf'
 
     //
     // Disable workers to avoid yet another cross-origin issue (workers need the URL of
@@ -185,5 +186,14 @@ function createQuestion(){
 }
 
 $(document).ready(function() {
-  setTimeout(createQuestion, 10000);
+  setTimeout(createQuestion, 20000);
 });
+
+$("#star-slide").click(function() {
+  $(this).addClass("disabled");
+})
+
+$("#add-notes").click(function() {
+  $(this).addClass("disabled");
+  $(this).html("Coming soon!");
+})
