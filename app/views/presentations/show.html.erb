@@ -42,6 +42,7 @@
 
 <% end %>
 
+<div class="pres-spacer">
 <div class="presentation-container <%= params[:student].present? ? 'student-pres' : '' %>">
   <canvas id="the-canvas"></canvas>
 </div>
@@ -83,7 +84,7 @@
   </div>
 </div>
 <% end %>
-
+</div>
 
 
   <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>

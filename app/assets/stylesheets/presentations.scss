@@ -50,6 +50,10 @@ $header-height: 90px;
   color: #D9D9D9;
 }
 
+.pres-spacer {
+  margin-top: 20px;
+}
+
 .presentation-container {
   width: 75%;
 }
@@ -248,4 +252,8 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   height: auto !important;
   margin-bottom: 15px;
+}
+
+#mainImg > img {
+  width:100%;
 }
