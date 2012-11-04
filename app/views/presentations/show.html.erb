@@ -23,9 +23,9 @@
   <div class="enter-question">
 	<%= form_for @question do |f| %>
   		<div class="field">
-    		<%= f.text_area :content, placeholder: "Enter questions here....", :size => "30x3" %>
+    		<%= f.text_area :content, placeholder: "Enter questions here....", :size => "30x" %>
   		</div>
-  		<%= f.submit "Ask", class: "btn btn-large btn-primary" %>
+  		<%= f.submit "Ask", class: "btn btn-large btn-blue" %>
   	<% end %>
   </div>
 
