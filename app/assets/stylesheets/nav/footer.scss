@@ -1,3 +1,6 @@
+@import "lib/variables";
+@import "lib/mixins";
+
 footer {  
   @include inset-box-shadow(0, 10px, 5px, -8px, $med-gray);
   color: lighten($dark-gray, 30);

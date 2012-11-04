@@ -1,1 +1,0 @@
-$(document).keydown(function(e){var t=e.keyCode||e.which;if(t==37)return goPrevious(),!1;if(t==39)return goNext(),!1});

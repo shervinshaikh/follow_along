@@ -1,3 +1,5 @@
+@import "lib/variables";
+@import "lib/mixins";
 
 /* Max browser dimensions to enable full canvas height/width */
 html, body {
@@ -68,6 +70,8 @@ $header-height: 90px;
     color: white;
     margin-bottom: 5px;
     padding: 20px;
+    opacity: .9;
+    &:hover {opacity:1; position:relative; right:2px;}
   }
 
   .item-blue { background-color: #08c; }
@@ -124,6 +128,21 @@ canvas {
   }
 }
 
+.enter-question-container {
+  clear: both;
+  float: left;
+  margin-top: 30px;
+  width: 100%;
+  outline
+
+  form {
+    background: none;
+    border: none !important;
+  }
+}
+
+
+
 
 
 
@@ -140,11 +159,14 @@ canvas {
 
   h1 {
     font-weight: bold;
+    font-size: 2.5em;
     margin-bottom: 20px;
   }
 }
 
 .presentation-list {
+  padding-bottom: 60px;
+
   h1 {
     color: white;
   }
@@ -181,7 +203,9 @@ canvas {
 }
 
 .question-list {
-
+  h1 {
+    font-size: 2.3em;
+  }
 }
 
 .question-box {
@@ -207,18 +231,11 @@ canvas {
   }
 }
 
-.enter-question-container {
-  clear: both;
-  float: left;
-  margin-top: 30px;
-  width: 100%;
-  outline
-
-  form {
-    background: none;
-    border: none !important;
-  }
+#questions {
+  border-left: dashed 1px #DFDFDF;
+padding-left: 1px;
 }
+
 
 
 input, textarea, select, .uneditable-input {

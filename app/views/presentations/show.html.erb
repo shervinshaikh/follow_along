@@ -16,10 +16,10 @@
 
           <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
 
-  <!--         <div class="active-count">
-            <span class="visitor_hits">0</span> Users
+          <div class="active-count">
+            <span class="visitor_hits">1</span> Users
           </div>
-   -->
+          
       </div>
     </div>
   <% end %>
@@ -33,7 +33,7 @@
   <div id="questions" class="question-container">
     <h2>Questions:</h2>
 
-    <div class="question-item item-blue">
+   <!--  <div class="question-item item-blue">
       <p>How can I convey my message effectively in 10 seconds?</p>
     </div>
 
@@ -43,7 +43,7 @@
 
     <div class="question-item item-purple">
       <p>Is this the real life?</p>
-    </div>
+    </div> -->
   </div>
 <% end %>
 
@@ -71,5 +71,5 @@
   <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
 
   <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
-  <%= javascript_include_tag :presentation, :pusher %>
+  <%= javascript_include_tag :presentation, :channels %>
 
