@@ -2,6 +2,7 @@ FollowAlong::Application.routes.draw do
 
   resources :users
   resources :presentations
+  resources :questions
 
   match '/dashboard' => "users#dashboard", as: "dashboard"
 
