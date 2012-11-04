@@ -55,6 +55,8 @@
   color: lighten($gray-text, 10);
   margin-bottom: 50px;
   text-align: center;
+  padding: 0 30px;
+  line-height: 1.5;
 
   @media (max-width: 630px) { margin-bottom: 25px; }
 }
