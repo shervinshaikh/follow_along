@@ -45,12 +45,25 @@ $header-height: 90px;
 
 .presentation-container {
   width: 75%;
-  outline: 1px solid red;
 }
 
 .feedback-container {
   width: 25%;
-  outline: 1px solid blue;
+  margin-top: 15px;
+
+  .feedback-item {
+    @include border-box;
+    @include bold(1.1em);
+    color: white;
+    margin-bottom: 5px;
+    padding: 20px;
+  }
+
+  .item-blue { background-color: #08c; }
+
+  .item-green { background-color: $green; }
+
+  .item-purple { background-color: #9C4274; }
 }
 
 .pdf-container {
@@ -108,5 +121,22 @@ canvas {
     @include bold(1.2em);
     float: left;
     margin-top: 5px;
+  }
+
+  @media (max-width: 630px) {
+    text-align: center;
+
+    .pres-title, .btn {
+      float: none;
+      display: inline-block;
+    }
+
+    .pres-title {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: block;
+    }
   }
 }
