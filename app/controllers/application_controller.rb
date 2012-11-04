@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  protect_from_forgery
+  #protect_from_forgery
 
   ACCESS_DENIED_PATH = '/login'
 
