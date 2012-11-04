@@ -20,6 +20,15 @@
 <div class="question-container">
   <h2>Questions:</h2>
 
+  <div class="enter-question">
+	<%= form_for @question do |f| %>
+  		<div class="field">
+    		<%= f.text_area :content, placeholder: "Enter questions here....", :size => "30x3" %>
+  		</div>
+  		<%= f.submit "Ask", class: "btn btn-large btn-primary" %>
+  	<% end %>
+  </div>
+
   <div class="question-item item-blue">
     <p>How can I convey my message effectively in 10 seconds?</p>
   </div>
