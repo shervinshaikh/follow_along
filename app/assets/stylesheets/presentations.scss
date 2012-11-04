@@ -52,6 +52,12 @@ $header-height: 90px;
   width: 75%;
 }
 
+.student-pres {
+  // Hack - students don't get the sidebar,
+  // so have the pres take up the full width
+  width: 100% !important;
+}
+
 .question-container {
   width: 25%;
   margin-top: 15px;
@@ -71,11 +77,6 @@ $header-height: 90px;
   .item-purple { background-color: #9C4274; }
 
    .item-orange { background-color: #EC663C; }
-}
-
-.pdf-container {
-  margin: 0 auto;
-  outline:1px solid black;
 }
 
 canvas {
@@ -205,6 +206,20 @@ canvas {
     width: 100%;
   }
 }
+
+.enter-question-container {
+  clear: both;
+  float: left;
+  margin-top: 30px;
+  width: 100%;
+  outline
+
+  form {
+    background: none;
+    border: none !important;
+  }
+}
+
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
