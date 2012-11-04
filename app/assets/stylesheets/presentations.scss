@@ -43,6 +43,11 @@ $header-height: 90px;
   margin-top: ($header-height / 2) - 15px;
 }
 
+.active-count {
+  display: block;
+  color: #D9D9D9;
+}
+
 .presentation-container {
   width: 75%;
 }
@@ -115,6 +120,8 @@ canvas {
     bottom: 3px;
   }
 }
+
+
 
 
 

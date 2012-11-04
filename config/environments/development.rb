@@ -1,5 +1,10 @@
 FollowAlong::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  require 'pusher'
+
+  Pusher.app_id = 30967
+  Pusher.key = 'f0c1c4156c3645537125'
+  Pusher.secret = '5fc16578f301685b4be0'
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
