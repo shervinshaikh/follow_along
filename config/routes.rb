@@ -15,7 +15,7 @@ FollowAlong::Application.routes.draw do
   match 'logout' => 'sessions#destroy', as: 'logout'
   
   # Pusher POST data
-  post 'pusher/auth'
+  # post 'pusher/auth'
 
   root :to => 'home#index'
 
