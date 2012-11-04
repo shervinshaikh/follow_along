@@ -5,6 +5,7 @@ FollowAlong::Application.routes.draw do
   resources :questions
 
   match '/dashboard' => "users#dashboard", as: "dashboard"
+  match '/pricing' => "home#pricing", as: "pricing"
 
   match 'signup'      => 'users#new',     as: 'signup'
 

@@ -26,7 +26,7 @@
 <% end %>
 
 <div class="presentation-container <%= params[:student].present? ? 'student-pres' : '' %>">
-  <canvas id="the-canvas" style="border:1px solid black"></canvas>
+  <canvas id="the-canvas"></canvas>
 </div>
 
 <% unless params[:student].present? %>
