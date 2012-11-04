@@ -159,11 +159,30 @@ var colors = ["item-blue","item-green","item-purple","item-orange"];
 
 
 
-function createQuestion(){
-  console.log("creating question");
-  var questionV;
-  for (questionV=0; questionV <= questions.length - 1; questionV++) {
+// function createQuestion(){
+//   console.log("creating question");
+//   var questionV;
+//   for (questionV=0; questionV <= questions.length - 1; questionV++) {
   
+//         var colorV = questionV;
+//         while (colorV > colors.length - 1) {
+//           colorV -= colors.length;
+//         }
+//         var questionText = questions[questionV];
+//         console.log(colorV);
+//         var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
+//         $("#questions").append(testtt);
+      
+//   }
+// }
+
+
+questionV=0;
+
+function createQuestion(){
+  var randomnumber=(Math.random()*3+1);
+  console.log(randomnumber);
+        setTimeout(function () {
         var colorV = questionV;
         while (colorV > colors.length - 1) {
           colorV -= colors.length;
@@ -171,15 +190,16 @@ function createQuestion(){
         var questionText = questions[questionV];
         console.log(colorV);
         var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
-        $("#questions").appent('testtt');
-      //   $("#questions").fadeIn(1000, function() {
-      //     if ( q < questions.length) {
-      //       createQuestion();
-      // }
+        $("#questions").append(testtt);
+        $(".question-item").last().hide().fadeIn(750);
+        questionV++;
+        if (questionV <= questions.length - 1) {
+          createQuestion();
+        }
+      } , 4000 * randomnumber);
   }
-}
 
-  
+$(document).ready(createQuestion);
 
 
   // function delay() {
