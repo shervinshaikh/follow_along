@@ -1,6 +1,6 @@
 
 
-    
+
     // NOTE:
     // Modifying the URL below to another server will likely *NOT* work. Because of browser
     // security restrictions, we have to use a file server with special headers
@@ -24,10 +24,10 @@
     // Get page info from document, resize canvas accordingly, and render page
     //
     function renderPage(num) {
-      
+
       // Set bullshit pageNum var
       pageNum = num;
-      
+
       // Using promise to fetch the page
       pdfDoc.getPage(num).then(function(page) {
         var viewport = page.getViewport(scale);
@@ -64,7 +64,7 @@
       pageNum--;
       slideChange();
       renderPage(pageNum);
-      
+
     }
 
     //
@@ -78,7 +78,7 @@
       pageNum++;
       slideChange();
       renderPage(pageNum);
-      
+
     }
 
     //
@@ -101,13 +101,13 @@
       renderPage(pageNum);
     });
 
- 
+
 $(document).keydown(function(e){
- 
+
  //e.which is set by jQuery for those browsers that do not normally support e.keyCode.
  var keyCode = e.keyCode || e.which;
- 
- 
+
+
 
  if (keyCode == 37)
  {
@@ -122,7 +122,7 @@ setTimeout(function(){
  //$('#move-left').removeClass('hoverhack');
  return false;
  }
- 
+
  if (keyCode == 39)
  {
  var moveRight = $('#move-right');
@@ -133,7 +133,7 @@ setTimeout(function(){
  goNext();
  return false;
  }
- 
+
 });
     var n;
      var numberOfPages = 12;
@@ -149,88 +149,41 @@ $btns.click(function() {
 });
 
 // **********************
-var questions = ["Question Number ONE!!","Question Number TWO!!","Question Number THREE!!","Question Number FOUR!!","Question Number FIVE!!","Question Number SIX!!","Question Number SEVEN!!","Question Number EIGHT!!","Question Number NINE!!","Question Number TEN!!"];
-var colors = ["item-blue","item-green","item-purple","item-orange"];
+var questions = [
+  "What was the theorem you used in problem 3?",
+  "I don't understand what the author was trying to convey in the first scene of Chapter 6.",
+  "Is this the real life?",
+  "How can effective design influence my startup?",
+  "Can you explain your defintition of urban revitalization?",
+  "Why did you only integrate up to b-k?",
+  "I love Startup Weekend! How can I get more involved?",
+  "NINE",
+  "TEN"
+];
 
-
-
-
-
-
-// function createQuestion(){
-//   console.log("creating question");
-//   var questionV;
-//   for (questionV=0; questionV <= questions.length - 1; questionV++) {
-  
-//         var colorV = questionV;
-//         while (colorV > colors.length - 1) {
-//           colorV -= colors.length;
-//         }
-//         var questionText = questions[questionV];
-//         console.log(colorV);
-//         var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
-//         $("#questions").append(testtt);
-      
-//   }
-// }
-
+var colors = ["item-green","item-purple","item-orange", "item-blue"];
 
 questionV=0;
 
 function createQuestion(){
-  var randomnumber=(Math.random()*3+1);
-  console.log(randomnumber);
-        setTimeout(function () {
-        var colorV = questionV;
-        while (colorV > colors.length - 1) {
-          colorV -= colors.length;
-        }
-        var questionText = questions[questionV];
-        // console.log(colorV);
-        var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
-        $("#questions").append(testtt);
-        $(".question-item").last().hide().fadeIn(750);
-        questionV++;
-        if (questionV <= questions.length - 1) {
-          createQuestion();
-        }
-      } , 4000 * randomnumber);
-  }
+  var randomnumber=(Math.random()*3 + 1);
+  // console.log(randomnumber);
+
+  setTimeout(function () {
+    var colorV = questionV;
+    while (colorV > colors.length - 1) {
+      colorV -= colors.length;
+    }
+
+    var questionText = questions[questionV];
+    var questionHHTML = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
+    $("#questions").append(questionHHTML);
+    $(".question-item").last().hide().fadeIn(750);
+    questionV++;
+    if (questionV <= questions.length - 1) {
+      createQuestion();
+    }
+  } , 3000 * randomnumber);
+}
 
 $(document).ready(createQuestion);
-
-
-  // function delay() {
-  //   $("#questions").fadeIn(1000, function() {
-  //     for (int i = questions.length; i < )
-  //     if ( q < questions.length) {
-  //       delay(question[i + 1]);
-  //     }
-  // }
-
-// createQuestion();
-// $(document).ready(createQuestion());
-
-
-
-
-
-
-
-
-// $('#random').click(function() {
-//   $('#questions').append("<div class='question-item item-orange'><p>How can I convey my message effectively in 10 seconds?</p></div>");
-//   $(".question-item").last().hide().fadeIn();
-// });
-
-
-
-
-
-
-
-
-
-
-
-
