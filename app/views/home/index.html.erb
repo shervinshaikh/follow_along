@@ -1,4 +1,4 @@
-<% provide(:title, 'This is the title') %>
+<% provide(:title, 'Engage your students') %>
 
 <section class="landing-main">
   <div class="container">
@@ -26,8 +26,8 @@
       <h2>Learn more about:</h2>
 
       <div class="span-10 offset-3 cta-container">
-        <a href="" class="btn btn-green btn-large left">Benefits for Professors</a>
-        <a href="" class="btn btn-green btn-large right">Benefits for Students</a>
+        <a href="#educators" class="btn btn-green btn-large left">Benefits for Educators</a>
+        <a href="#students" class="btn btn-green btn-large right">Benefits for Students</a>
       </div>
 
 
@@ -37,16 +37,90 @@
 
 
 
+
+
+
+<section class="benefits benefits-educators" id="educators">
+  <div class="container">
+    <div class="row">
+      <div class="span-16">
+
+        <h1>For Educators:</h1>
+
+        <ul>
+          <li>FollowAlong is a <em>low cost, zero-configuration</em> system to engage your students.</li>
+          <li>Ask questions and see answers in <em>real time.</em></li>
+          <li>Get <em>fine-grained insights</em> into your students performance and knowledge</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="benefits benefits-students" id="students">
+  <div class="container">
+    <div class="row">
+      <div class="span-16">
+
+        <h1>For Students:</h1>
+
+        <ul>
+          <li>No expensive hardware required</li>
+          <li>Answering questions and getting feedback increases engagement</li>
+          <li>Ability to go back and review slides at own pace improves knowledge retention</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="final-cta">
+  <div class="container">
+    <div class="row">
+      <div class="span-16">
+
+        <h1>Get started with FollowAlong today.</h1>
+
+        <a href="#" class="btn btn-green btn-large">View Pricing</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
 <section class="landing-footer">
   <div class="container">
     <div class="row">
       <div class="span-8 offset-4">
 
-        <p><span style="color:#0088CC;">FollowAlong</span> was created at <a href="http://www.santabarbara.startupweekend.org">SB Startup Weekend</a>.</p>
-        <span class="divider">|</span>
-        <%= link_to "Log in", "#" %>
-        <span class="divider">|</span>
-        
+        <p>
+          <span style="color:#0088CC;">FollowAlong</span> was created at
+          <a href="http://www.santabarbara.startupweekend.org">SB Startup Weekend</a>.
+        </p>
+
+        <%= link_to "Log in", login_path %>
+
+
 
       </div>
     </div>

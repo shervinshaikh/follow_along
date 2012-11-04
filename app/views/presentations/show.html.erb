@@ -7,26 +7,54 @@
         <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
       </div>
 
-      <a href="#" class="btn btn-blue btn-end">End Presentation</a>
+      <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
 
     </div>
   </div>
 <% end %>
 
-<div class="pdf-container">
-  <canvas id="pdf-renderer"></canvas>
+<div class="presentation-container">
+  <canvas id="the-canvas" style="border:1px solid black"></canvas>
 </div>
 
-<div class="feedback-container">
-  asdf
+<div class="question-container">
+  <h2>Questions:</h2>
+
+  <div class="question-item item-blue">
+    <p>How can I convey my message effectively in 10 seconds?</p>
+  </div>
+
+  <div class="question-item item-green">
+    <p>Can you explain the theorem you used in question 2?</p>
+  </div>
+
+  <div class="question-item item-purple">
+    <p>Is this the real life?</p>
+  </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Use latest PDF.js build from Github -->
   <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
-  
+
   <script type="text/javascript">
     //
-    // NOTE: 
+    // NOTE:
     // Modifying the URL below to another server will likely *NOT* work. Because of browser
     // security restrictions, we have to use a file server with special headers
     // (CORS) - most servers don't support cross-origin browser requests.
@@ -41,8 +69,8 @@
 
     var pdfDoc = null,
         pageNum = 1,
-        scale = 1,
-        canvas = document.getElementById('pdf-renderer'),
+        scale = 0.8,
+        canvas = document.getElementById('the-canvas'),
         ctx = canvas.getContext('2d');
 
     //
@@ -104,5 +132,3 @@
 
     );
   </script>
-
-   
