@@ -1,3 +1,7 @@
+@import "lib/variables";
+@import "lib/mixins";
+
+
 .alert {
   @include border-box;
   @include border-radius;

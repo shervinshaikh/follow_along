@@ -12,5 +12,4 @@ class PusherController < ApplicationController
   #       render :text => "Not authorized", :status => '403'
   #     end
   # end
-  
 end
