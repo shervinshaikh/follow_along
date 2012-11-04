@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width">
   <title>FollowAlong | <%= yield(:title) %></title>
   <%= stylesheet_link_tag :followalong %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <!-- <link rel="shortcut icon" type="image/ico" href="/favicon.gif" /> -->
 
@@ -23,7 +24,6 @@
 
 
 
-  <%= javascript_include_tag "application" %>
   <%= yield :javascript_includes %>
 
 </body>

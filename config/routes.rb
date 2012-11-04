@@ -13,6 +13,9 @@ FollowAlong::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   match 'login'  => 'sessions#new',     as: 'login'
   match 'logout' => 'sessions#destroy', as: 'logout'
+  
+  # Pusher POST data
+  post 'pusher/auth'
 
   root :to => 'home#index'
 
