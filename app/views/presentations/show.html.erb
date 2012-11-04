@@ -6,134 +6,54 @@
         <a href="#" class="move-slide" id="move-left" onclick="goPrevious()">&lt;</a>
         <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
       </div>
+ HEAD
+      <div id="pageTrackers">
+
+  
+      </div>
 
       <p class="num btn-end"><span class="visitor_hits">0</span> Users  </p>
-      <a href="#" class="btn btn-blue btn-end">End Presentation</a>
+      <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
 
     </div>
   </div>
 <% end %>
 
-<div class="pdf-container">
-  <canvas id="pdf-renderer"></canvas>
+<div class="presentation-container">
+  <canvas id="the-canvas" style="border:1px solid black"></canvas>
 </div>
 
-<div class="feedback-container">
-  asdf
+<div class="question-container">
+  <h2>Questions:</h2>
+
+  <div class="enter-question">
+	<%= form_for @question do |f| %>
+  		<div class="field">
+    		<%= f.text_area :content, placeholder: "Enter questions here....", :size => "30x" %>
+  		</div>
+  		<%= f.submit "Ask", class: "btn btn-large btn-blue" %>
+  	<% end %>
+  </div>
+
+  <div class="question-item item-blue">
+    <p>How can I convey my message effectively in 10 seconds?</p>
+  </div>
+
+  <div class="question-item item-green">
+    <p>Can you explain the theorem you used in question 2?</p>
+  </div>
+
+  <div class="question-item item-purple">
+    <p>Is this the real life?</p>
+  </div>
+
 </div>
 
-<!-- Use latest PDF.js build from Github -->
+
+
+
+
   <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
-  
-  <script type="text/javascript">
-    //
-    // NOTE: 
-    // Modifying the URL below to another server will likely *NOT* work. Because of browser
-    // security restrictions, we have to use a file server with special headers
-    // (CORS) - most servers don't support cross-origin browser requests.
-    //
-    var url = 'http://cdn.mozilla.net/pdfjs/tracemonkey.pdf';
-
-    //
-    // Disable workers to avoid yet another cross-origin issue (workers need the URL of
-    // the script to be loaded, and currently do not allow cross-origin scripts)
-    //
-    PDFJS.disableWorker = true;
-
-    var pdfDoc = null,
-        pageNum = 1,
-        scale = 1,
-        canvas = document.getElementById('pdf-renderer'),
-        ctx = canvas.getContext('2d');
-
-    //
-    // Get page info from document, resize canvas accordingly, and render page
-    //
-    function renderPage(num) {
-      // Using promise to fetch the page
-      pdfDoc.getPage(num).then(function(page) {
-        var viewport = page.getViewport(scale);
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        // Render PDF page into canvas context
-        var renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        page.render(renderContext);
-      });
-
-      // Update page counters
-      document.getElementById('page_num').textContent = pageNum;
-      document.getElementById('page_count').textContent = pdfDoc.numPages;
-    }
-
-    //
-    // Go to previous page
-    //
-    function goPrevious() {
-      if (pageNum <= 1)
-        return;
-      pageNum--;
-      renderPage(pageNum);
-    }
-
-    //
-    // Go to next page
-    //
-    function goNext() {
-      if (pageNum >= pdfDoc.numPages)
-        return;
-      pageNum++;
-      renderPage(pageNum);
-    }
-
-    //
-    //
-    // playing with keystrokes
-    function getChar(event) {
-      pageNum++;
-      renderPage(pageNum);
-
-    }
-
-
-    //
-    // Asynchronously download PDF as an ArrayBuffer
-    //
-    PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
-      pdfDoc = _pdfDoc;
-      renderPage(pageNum);
-    });
-  </script>
-  
   <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
-  <script type="text/javascript">
-  
-    Pusher.log = function(message) {
-      if (window.console && window.console.log) window.console.log(message);
-    };
+  <%= javascript_include_tag :presentation, :pusher %>
 
-    // Flash fallback logging - don't include this in production
-    WEB_SOCKET_DEBUG = true;
-
-    // uses API KEY in config/development.rb
-    var pusher = new Pusher('<%= Pusher.key %>'); 
-    
-    var channel = pusher.subscribe('presence-test_channel');
-    channel.bind('update_count', function(data) {
-      alert("winner! " + data);
-    });
-    
-    // var usersChannel = pusher.subscribe('presence-visitor_hits');
-    // usersChannel.bind('pusher:subscription_succeeded', function() {
-    //     var count = usersChannel.user_count;
-    //     
-    //     console.log(count);
-    //     
-    // });
-    // 
-
-
-  </script>

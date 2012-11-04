@@ -1,22 +1,7 @@
-<html>
-<body>
-  <div>
-    <button id="prev" onclick="goPrevious()">Previous</button>
-    <button id="next" onclick="goNext()">Next</button>
-    &nbsp; &nbsp;
-    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-  </div>
 
-  <div>
-    <canvas id="the-canvas" style="border:1px solid black"></canvas>
-  </div>
 
-  <!-- Use latest PDF.js build from Github -->
-  <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
-  
-  <script type="text/javascript">
-    //
-    // NOTE: 
+    
+    // NOTE:
     // Modifying the URL below to another server will likely *NOT* work. Because of browser
     // security restrictions, we have to use a file server with special headers
     // (CORS) - most servers don't support cross-origin browser requests.
@@ -59,9 +44,16 @@
     }
 
     //
+    var updateTracker = function() {
+  var $btns = $(".pageTrackers");
+     $btns.removeClass("active");
+    $('*[data-pagenum="'+pageNum+'"]').addClass('active');
+}
+
     // Go to previous page
     //
     function goPrevious() {
+      updateTracker();
       if (pageNum <= 1)
         return;
       pageNum--;
@@ -72,12 +64,26 @@
     // Go to next page
     //
     function goNext() {
+      updateTracker();
       if (pageNum >= pdfDoc.numPages)
         return;
       pageNum++;
       renderPage(pageNum);
+      
     }
 
+    //
+    //
+    // playing with keystrokes
+    function getChar(event) {
+      pageNum++;
+      renderPage(pageNum);
+
+    }
+
+    function selectPage(n) {
+      renderPage(n);
+    }
     //
     // Asynchronously download PDF as an ArrayBuffer
     //
@@ -85,9 +91,7 @@
       pdfDoc = _pdfDoc;
       renderPage(pageNum);
     });
-  </script>  
 
-  <script type="text/javascript">
  
 $(document).keydown(function(e){
  
@@ -106,20 +110,44 @@ $(document).keydown(function(e){
  // return false;
  // }
  
+
  if (keyCode == 37)
  {
- alert( "Left arrow key hit." );
+var moveLeft = $('#move-left');
+moveLeft.addClass('hoverhack');
+setTimeout(function(){
+  moveLeft.removeClass('hoverhack');
+},100);
+ goPrevious();
+ // $('#move-left').addClass('hoverhack').delay(1000);
+
+ //$('#move-left').removeClass('hoverhack');
  return false;
  }
  
  if (keyCode == 39)
  {
- alert( "Right arrow key hit." );
+ var moveRight = $('#move-right');
+moveRight.addClass('hoverhack');
+setTimeout(function(){
+  moveRight.removeClass('hoverhack');
+},100);
+ goNext();
  return false;
  }
  
 });
- 
-</script>
-</body>
-</html>
+    var n;
+     var numberOfPages = 12;
+   //var numberOfPages =  this.pdfInfo.numPages;
+    for (n = 1; n <= numberOfPages + 1; n++) {
+      $('#pageTrackers').append('<span class="pageTrackers" onclick="selectPage('+n+')" data-pagenum="'+n+'">. </span>');
+    }
+
+var $btns = $(".pageTrackers");
+$btns.click(function() {
+  $btns.removeClass("active"); // Remove from all, not just one
+  $(this).addClass("active");  // Add the active class to the one we clicked one
+});
+
+

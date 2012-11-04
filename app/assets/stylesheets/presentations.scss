@@ -45,12 +45,25 @@ $header-height: 90px;
 
 .presentation-container {
   width: 75%;
-  outline: 1px solid red;
 }
 
-.feedback-container {
+.question-container {
   width: 25%;
-  outline: 1px solid blue;
+  margin-top: 15px;
+
+  .question-item {
+    @include border-box;
+    @include bold(1.1em);
+    color: white;
+    margin-bottom: 5px;
+    padding: 20px;
+  }
+
+  .item-blue { background-color: #08c; }
+
+  .item-green { background-color: $green; }
+
+  .item-purple { background-color: #9C4274; }
 }
 
 .pdf-container {
@@ -67,7 +80,7 @@ canvas {
 }
 
 .presentation-container,
-.feedback-container {
+.question-container {
   @include border-box;
   float: left;
 
@@ -78,8 +91,20 @@ canvas {
   }
 }
 
+.hoverhack {
+  color: #3A84C5;
+}
 
-
+.pageTrackers {
+  font-size: 30px !important;
+  color: #3A84C5 !important;
+  &:hover {color:green !important; opacity:0.8; cursor: pointer !important;}
+  &.active{
+    position:relative;
+    bottom:3px; 
+    color:green!important;
+  }
+}
 
 
 
@@ -87,24 +112,85 @@ canvas {
 //    DASHBOARD
 // -----------------------
 .dashboard-container {
-  padding: 25px 0;
+}
+
+.presentation-list,
+.question-list {
+  padding: 40px 0;
 
   h1 {
-    color: white;
     font-weight: bold;
     margin-bottom: 20px;
+  }
+}
+
+.presentation-list {
+  h1 {
+    color: white;
   }
 }
 
 .pres-box {
   @extend %whitebox;
   color: $gray-text;
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 13px;
+  margin-bottom: 20px;
 
   .pres-title {
     @include bold(1.2em);
     float: left;
     margin-top: 5px;
   }
+
+  @media (max-width: 630px) {
+    text-align: center;
+
+    .pres-title, .btn {
+      float: none;
+      display: inline-block;
+    }
+
+    .pres-title {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: block;
+    }
+  }
+}
+
+.question-list {
+
+}
+
+.question-box {
+  @extend %whitebox;
+  @include bold(1.2em);
+  padding: 15px;
+
+  .question-pres {
+    color: darken($med-gray, 15);
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-top: 10px;
+  }
+
+  .respond-btn {
+    display: block;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 630px) {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto !important;
+  margin-bottom: 15px;
 }

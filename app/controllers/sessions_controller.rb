@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    return redirect_to expenses_path if signed_in?
+    redirect_to dashboard_path if signed_in?
   end
 
   def create
