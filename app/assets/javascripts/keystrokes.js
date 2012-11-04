@@ -16,14 +16,28 @@ $(document).keydown(function(e){
  // return false;
  // }
  
+
  if (keyCode == 37)
  {
+var moveLeft = $('#move-left');
+moveLeft.addClass('hoverhack');
+setTimeout(function(){
+	moveLeft.removeClass('hoverhack');
+},100);
  goPrevious();
+ // $('#move-left').addClass('hoverhack').delay(1000);
+
+ //$('#move-left').removeClass('hoverhack');
  return false;
  }
  
  if (keyCode == 39)
  {
+ var moveRight = $('#move-right');
+moveRight.addClass('hoverhack');
+setTimeout(function(){
+	moveRight.removeClass('hoverhack');
+},100);
  goNext();
  return false;
  }
