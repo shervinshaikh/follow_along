@@ -4,9 +4,9 @@ require 'rails/all'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  #Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
-  # Bundler.require(:default, :assets, Rails.env)
+  Bundler.require(:default, :assets, Rails.env)
 end
 
 module FollowAlong
@@ -60,6 +60,6 @@ module FollowAlong
     config.assets.version = '1.1'
     
     # Precompile assets
-    # config.assets.precompile += %w( *.js *.css )
+    config.assets.precompile += %w( *.js *.css )
   end
 end
