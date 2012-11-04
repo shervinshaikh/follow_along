@@ -3,5 +3,6 @@ class PresentationsController < ApplicationController
   end
 
   def show
+  	@question = Question.new
   end
 end
