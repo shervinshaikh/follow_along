@@ -8,14 +8,10 @@ class PresentationsController < ApplicationController
   def show
     @question = Question.new
     @identity = session[:identity]
-    
-    
-    
-
   end
-  
+
   def create
- 
+
   end
 
 

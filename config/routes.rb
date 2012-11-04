@@ -16,9 +16,13 @@ FollowAlong::Application.routes.draw do
   match 'login'  => 'sessions#new',     as: 'login'
   match 'logout' => 'sessions#destroy', as: 'logout'
   match '/pusher/auth' => 'pusher#auth'
-  
+
   # Pusher POST data
   post 'pusher/auth'
+
+
+  match '/swsb' => redirect('/presentations/1?student=1')
+
 
   root :to => 'home#index'
 
