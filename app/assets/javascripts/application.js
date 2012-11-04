@@ -13,7 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require pdf
 //= require presentation
 //= require smoothscroll
-//= require tree .
