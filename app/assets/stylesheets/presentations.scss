@@ -47,11 +47,11 @@ $header-height: 90px;
   width: 75%;
 }
 
-.feedback-container {
+.question-container {
   width: 25%;
   margin-top: 15px;
 
-  .feedback-item {
+  .question-item {
     @include border-box;
     @include bold(1.1em);
     color: white;
@@ -80,7 +80,7 @@ canvas {
 }
 
 .presentation-container,
-.feedback-container {
+.question-container {
   @include border-box;
   float: left;
 
@@ -100,20 +100,29 @@ canvas {
 //    DASHBOARD
 // -----------------------
 .dashboard-container {
-  padding: 25px 0;
+}
+
+.presentation-list,
+.question-list {
+  padding: 40px 0;
 
   h1 {
-    color: white;
     font-weight: bold;
     margin-bottom: 20px;
+  }
+}
+
+.presentation-list {
+  h1 {
+    color: white;
   }
 }
 
 .pres-box {
   @extend %whitebox;
   color: $gray-text;
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 13px;
+  margin-bottom: 20px;
 
   .pres-title {
     @include bold(1.2em);
@@ -136,5 +145,32 @@ canvas {
     .btn {
       display: block;
     }
+  }
+}
+
+.question-list {
+
+}
+
+.question-box {
+  @extend %whitebox;
+  @include bold(1.2em);
+  padding: 15px;
+
+  .question-pres {
+    color: darken($med-gray, 15);
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-top: 10px;
+  }
+
+  .respond-btn {
+    display: block;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 630px) {
+    margin-bottom: 10px;
+    width: 100%;
   }
 }

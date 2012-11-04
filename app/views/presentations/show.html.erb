@@ -7,7 +7,7 @@
         <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
       </div>
 
-      <a href="#" class="btn btn-blue btn-end">End Presentation</a>
+      <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
 
     </div>
   </div>
@@ -17,18 +17,18 @@
   <canvas id="the-canvas" style="border:1px solid black"></canvas>
 </div>
 
-<div class="feedback-container">
-  <h2>Feedback:</h2>
+<div class="question-container">
+  <h2>Questions:</h2>
 
-  <div class="feedback-item item-blue">
+  <div class="question-item item-blue">
     <p>How can I convey my message effectively in 10 seconds?</p>
   </div>
 
-  <div class="feedback-item item-green">
+  <div class="question-item item-green">
     <p>Can you explain the theorem you used in question 2?</p>
   </div>
 
-  <div class="feedback-item item-purple">
+  <div class="question-item item-purple">
     <p>Is this the real life?</p>
   </div>
 
