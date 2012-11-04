@@ -151,7 +151,7 @@ $btns.click(function() {
 });
 
 // **********************
-var questions = ["Question Number ONE!!","Question Number TWO!!","Question Number THREE!!","Question Number FOUR!!","Question Number FIVE!!","Question Number SIX!!"];
+var questions = ["Question Number ONE!!","Question Number TWO!!","Question Number THREE!!","Question Number FOUR!!","Question Number FIVE!!","Question Number SIX!!","Question Number SEVEN!!","Question Number EIGHT!!","Question Number NINE!!","Question Number TEN!!"];
 var colors = ["item-blue","item-green","item-purple","item-orange"];
 
 
@@ -159,22 +159,39 @@ var colors = ["item-blue","item-green","item-purple","item-orange"];
 
 
 
-var createQuestion = function(){
+function createQuestion(){
+  console.log("creating question");
   var questionV;
-  for (questionV=0; questionV <= questions.length; questionV++) {
-  var colorV = questionV;
-  while (colorV > colors.length - 1) {
-    colorV -= colors.length;
+  for (questionV=0; questionV <= questions.length - 1; questionV++) {
+  
+        var colorV = questionV;
+        while (colorV > colors.length - 1) {
+          colorV -= colors.length;
+        }
+        var questionText = questions[questionV];
+        console.log(colorV);
+        var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
+        $("#questions").appent('testtt');
+      //   $("#questions").fadeIn(1000, function() {
+      //     if ( q < questions.length) {
+      //       createQuestion();
+      // }
   }
-  var questionText = questions[questionV];
-  console.log(colorV);
-  var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
-  $('#questions').append(testtt);
 }
-};
+
+  
 
 
-createQuestion();
+  // function delay() {
+  //   $("#questions").fadeIn(1000, function() {
+  //     for (int i = questions.length; i < )
+  //     if ( q < questions.length) {
+  //       delay(question[i + 1]);
+  //     }
+  // }
+
+// createQuestion();
+// $(document).ready(createQuestion());
 
 
 
@@ -183,10 +200,10 @@ createQuestion();
 
 
 
-$('#random').click(function() {
-  $('#questions').append("<div class='question-item item-orange'><p>How can I convey my message effectively in 10 seconds?</p></div>");
-  $(".question-item").last().hide().fadeIn();
-});
+// $('#random').click(function() {
+//   $('#questions').append("<div class='question-item item-orange'><p>How can I convey my message effectively in 10 seconds?</p></div>");
+//   $(".question-item").last().hide().fadeIn();
+// });
 
 
 

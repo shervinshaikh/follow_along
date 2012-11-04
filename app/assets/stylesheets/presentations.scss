@@ -68,6 +68,8 @@ $header-height: 90px;
     color: white;
     margin-bottom: 5px;
     padding: 20px;
+    opacity: .9;
+    &:hover {opacity:1; position:relative; right:2px;}
   }
 
   .item-blue { background-color: #08c; }
