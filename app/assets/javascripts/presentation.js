@@ -197,3 +197,21 @@ $("#add-notes").click(function() {
   $(this).addClass("disabled");
   $(this).html("Coming soon!");
 })
+
+
+$("#new_question").submit(function(e) {
+  e.preventDefault();
+  text = $(this).find('#question_content').val();
+  channel.trigger('client-add-question', {"text": text});
+  return false;
+})
+
+
+
+$("#question_content").keyup(function(evt) {
+  if (evt.keyCode === 13) {
+    text = $(this).val();
+    $(this).val('');
+    channel.trigger('client-add-question', {"text": text});
+  }
+});
