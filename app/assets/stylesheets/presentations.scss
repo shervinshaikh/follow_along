@@ -43,6 +43,11 @@ $header-height: 90px;
   margin-top: ($header-height / 2) - 15px;
 }
 
+.active-count {
+  display: block;
+  color: #D9D9D9;
+}
+
 .presentation-container {
   width: 75%;
 }
@@ -97,16 +102,28 @@ canvas {
   color: #3A84C5;
 }
 
+.pageTracker-container {
+  display: inline-block;
+  margin-top: 20px;
+}
 .pageTrackers {
-  font-size: 30px !important;
-  color: #3A84C5 !important;
-  &:hover {color:green !important; opacity:0.8; cursor: pointer !important;}
-  &.active{
-    position:relative;
-    bottom:3px; 
-    color:green!important;
+  color: #3A84C5;
+  font-size: 30px;
+
+  &:hover {
+    cursor: pointer;
+    color: green;
+    opacity: 0.8;
+  }
+
+  &.active {
+    color: green;
+    position: relative;
+    bottom: 3px;
   }
 }
+
+
 
 
 

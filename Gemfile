@@ -32,7 +32,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'pusher'              # => Used for socket actions
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"

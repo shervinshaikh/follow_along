@@ -6,14 +6,18 @@
         <a href="#" class="move-slide" id="move-left" onclick="goPrevious()">&lt;</a>
         <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
       </div>
-      <div id="pageTrackers">
 
-  
+      <div class="pageTracker-container">
+        <div id="pageTrackers"></div>
       </div>
 
       <input type="submit" value="random ??" id="random" />
-      <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
+        <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
 
+<!--         <div class="active-count">
+          <span class="visitor_hits">0</span> Users
+        </div>
+ -->
     </div>
   </div>
 <% end %>
@@ -51,9 +55,9 @@
 
 
 
-<!-- Use latest PDF.js build from Github -->
 
   <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
-  <%= javascript_include_tag :presentation %>
-  
+
+  <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+  <%= javascript_include_tag :presentation, :pusher %>
 
