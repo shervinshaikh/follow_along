@@ -24,6 +24,10 @@
     // Get page info from document, resize canvas accordingly, and render page
     //
     function renderPage(num) {
+      
+      // Set bullshit pageNum var
+      pageNum = num;
+      
       // Using promise to fetch the page
       pdfDoc.getPage(num).then(function(page) {
         var viewport = page.getViewport(scale);
@@ -39,13 +43,13 @@
       });
 
       // Update page counters
-      document.getElementById('page_num').textContent = pageNum;
+      // document.getElementById('page_num').textContent = pageNum;
       document.getElementById('page_count').textContent = pdfDoc.numPages;
     }
 
     //
     var updateTracker = function() {
-  var $btns = $(".pageTrackers");
+      var $btns = $(".pageTrackers");
      $btns.removeClass("active");
     $('*[data-pagenum="'+pageNum+'"]').addClass('active');
 }
@@ -53,21 +57,26 @@
     // Go to previous page
     //
     function goPrevious() {
+      console.log("------PAGE NUM #1 IS: " + pageNum);
       updateTracker();
       if (pageNum <= 1)
         return;
       pageNum--;
+      slideChange();
       renderPage(pageNum);
+      
     }
 
     //
     // Go to next page
     //
     function goNext() {
+      console.log("------PAGE NUM #1 IS: " + pageNum);
       updateTracker();
       if (pageNum >= pdfDoc.numPages)
         return;
       pageNum++;
+      slideChange();
       renderPage(pageNum);
       
     }
@@ -98,17 +107,6 @@ $(document).keydown(function(e){
  //e.which is set by jQuery for those browsers that do not normally support e.keyCode.
  var keyCode = e.keyCode || e.which;
  
- // if (keyCode == 38)
- // {
- // alert( "Up arrow key hit." );
- // return false;
- // }
- 
- // if (keyCode == 40)
- // {
- // alert( "Down arrow key hit." );
- // return false;
- // }
  
 
  if (keyCode == 37)
@@ -188,7 +186,7 @@ function createQuestion(){
           colorV -= colors.length;
         }
         var questionText = questions[questionV];
-        console.log(colorV);
+        // console.log(colorV);
         var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
         $("#questions").append(testtt);
         $(".question-item").last().hide().fadeIn(750);
