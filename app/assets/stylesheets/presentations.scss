@@ -95,6 +95,16 @@ canvas {
   color: #3A84C5;
 }
 
+.pageTrackers {
+  font-size: 30px !important;
+  color: #3A84C5 !important;
+  &:hover {color:green !important; opacity:0.8; cursor: pointer !important;}
+  &.active{
+    position:relative;
+    bottom:3px; 
+    color:green!important;
+  }
+}
 
 
 
