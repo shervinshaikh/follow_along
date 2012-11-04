@@ -1,58 +1,70 @@
-<% content_for :controls do %>
-  <div class="controls">
-    <div class="container">
+<% unless params[:student].present? %>
+  <% content_for :controls do %>
+    <div class="controls">
+      <div class="container">
 
-      <div class="move-container">
-        <a href="#" class="move-slide" id="move-left" onclick="goPrevious()">&lt;</a>
-        <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
-      </div>
-
-      <div class="pageTracker-container">
-        <div id="pageTrackers"></div>
-      </div>
-
-      <input type="submit" value="random ??" id="random" />
-        <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
-
-<!--         <div class="active-count">
-          <span class="visitor_hits">0</span> Users
+        <div class="move-container">
+          <a href="#" class="move-slide" id="move-left" onclick="goPrevious()">&lt;</a>
+          <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
         </div>
- -->
+
+        <div class="pageTracker-container">
+          <div id="pageTrackers"></div>
+        </div>
+
+        <!-- <input type="submit" value="random ??" id="random" /> -->
+
+          <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
+
+  <!--         <div class="active-count">
+            <span class="visitor_hits">0</span> Users
+          </div>
+   -->
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="presentation-container <%= params[:student].present? ? 'student-pres' : '' %>">
+  <canvas id="the-canvas" style="border:1px solid black"></canvas>
+</div>
+
+<% unless params[:student].present? %>
+  <div id="questions" class="question-container">
+    <h2>Questions:</h2>
+
+    <div class="question-item item-blue">
+      <p>How can I convey my message effectively in 10 seconds?</p>
+    </div>
+
+    <div class="question-item item-green">
+      <p>Can you explain the theorem you used in question 2?</p>
+    </div>
+
+    <div class="question-item item-purple">
+      <p>Is this the real life?</p>
     </div>
   </div>
 <% end %>
 
-<div class="presentation-container">
-  <canvas id="the-canvas" style="border:1px solid black"></canvas>
+<% if params[:student].present? %>
+<div class="enter-question-container">
+  <div class="container">
+    <div class="row">
+      <div class="span-8 offset-4">
+
+        <%= form_for @question do |f| %>
+          <div class="field">
+            <%= f.text_area :content, placeholder: "Enter questions here....", :size => "30x" %>
+          </div>
+          <%= f.submit "Ask Question", class: "btn btn-blue" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 </div>
-
-<div id="questions" class="question-container">
-  <h2>Questions:</h2>
-
-  <div class="enter-question">
-	<%= form_for @question do |f| %>
-  		<div class="field">
-    		<%= f.text_area :content, placeholder: "Enter questions here....", :size => "30x" %>
-  		</div>
-  		<%= f.submit "Ask", class: "btn btn-large btn-blue" %>
-  	<% end %>
-  </div>
-
-  <div class="question-item item-blue">
-    <p>How can I convey my message effectively in 10 seconds?</p>
-  </div>
-
-  <div class="question-item item-green">
-    <p>Can you explain the theorem you used in question 2?</p>
-  </div>
-
-  <div class="question-item item-purple">
-    <p>Is this the real life?</p>
-  </div>
-
-</div>
-
-
+<% end %>
 
 
 
