@@ -6,13 +6,11 @@ class PresentationsController < ApplicationController
   end
 
   def show
-
     Pusher['test_channel'].trigger('greet', {
       :greeting => "Hello there!"
     })
 
   	@question = Question.new
-
   end
 
 
