@@ -57,9 +57,9 @@ module FollowAlong
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    config.assets.version = '1.1'
     
     # Precompile assets
-    config.assets.precompile += %w( *.js *.css )
+    # config.assets.precompile += %w( *.js *.css )
   end
 end
