@@ -48,5 +48,9 @@ class CommentsController < ApplicationController
     options['get_gravatar'] = true
     return options
   end
+
+  def create
+    @comments = Comment.new
+  end
   
 end
