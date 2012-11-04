@@ -7,6 +7,7 @@
         <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
       </div>
 
+      <p class="num btn-end"><span class="visitor_hits">0</span> Users  </p>
       <a href="#" class="btn btn-blue btn-end">End Presentation</a>
 
     </div>
@@ -106,5 +107,33 @@
       renderPage(pageNum);
     });
   </script>
+  
+  <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+  <script type="text/javascript">
+  
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) window.console.log(message);
+    };
 
-   
+    // Flash fallback logging - don't include this in production
+    WEB_SOCKET_DEBUG = true;
+
+    // uses API KEY in config/development.rb
+    var pusher = new Pusher('<%= Pusher.key %>'); 
+    
+    var channel = pusher.subscribe('presence-test_channel');
+    channel.bind('update_count', function(data) {
+      alert("winner! " + data);
+    });
+    
+    // var usersChannel = pusher.subscribe('presence-visitor_hits');
+    // usersChannel.bind('pusher:subscription_succeeded', function() {
+    //     var count = usersChannel.user_count;
+    //     
+    //     console.log(count);
+    //     
+    // });
+    // 
+
+
+  </script>
