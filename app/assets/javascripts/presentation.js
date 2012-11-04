@@ -149,7 +149,53 @@ $btns.click(function() {
   $btns.removeClass("active"); // Remove from all, not just one
   $(this).addClass("active");  // Add the active class to the one we clicked one
 });
+
+// **********************
+var questions = ["Question Number ONE!!","Question Number TWO!!","Question Number THREE!!","Question Number FOUR!!","Question Number FIVE!!","Question Number SIX!!"];
+var colors = ["item-blue","item-green","item-purple","item-orange"];
+
+
+
+
+
+
+var createQuestion = function(){
+  var questionV;
+  for (questionV=0; questionV <= questions.length; questionV++) {
+  var colorV = questionV;
+  while (colorV > colors.length - 1) {
+    colorV -= colors.length;
+  }
+  var questionText = questions[questionV];
+  console.log(colorV);
+  var testtt = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
+  $('#questions').append(testtt);
+}
+};
+
+
+createQuestion();
+
+
+
+
+
+
+
+
 $('#random').click(function() {
   $('#questions').append("<div class='question-item item-orange'><p>How can I convey my message effectively in 10 seconds?</p></div>");
   $(".question-item").last().hide().fadeIn();
 });
+
+
+
+
+
+
+
+
+
+
+
+
