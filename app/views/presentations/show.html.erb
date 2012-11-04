@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<% else %>
+<% elsif signed_in? %>
 
   <% content_for :controls do %>
     <div class="controls">
@@ -46,7 +46,7 @@
   <canvas id="the-canvas"></canvas>
 </div>
 
-<% unless params[:student].present? %>
+<% if params[:student].blank? && signed_in? %>
   <div id="questions" class="question-container">
     <h2>Questions:</h2>
 
