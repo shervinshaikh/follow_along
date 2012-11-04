@@ -2,6 +2,6 @@
 
 
 
-* Created By: Joey Cody, Andrew Berls, Mike Holubowski, Shervin Shaikh
+** Created By: Joey Cody, Andrew Berls, Mike Holubowski, Shervin Shaikh
 
 Startup Weekend SB '12.
