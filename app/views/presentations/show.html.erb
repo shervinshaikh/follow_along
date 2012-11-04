@@ -88,23 +88,21 @@
       renderPage(pageNum);
     }
 
-    //
-    //
-    // playing with keystrokes
-    function getChar(event) {
-      pageNum++;
-      renderPage(pageNum);
-
-    }
-
 
     //
     // Asynchronously download PDF as an ArrayBuffer
     //
-    PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
+    //PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
+    //  pdfDoc = _pdfDoc;
+    //  renderPage(pageNum);
+    //}
+    PDFJS.getDocument('/pdf/test.pdf').then(function(_pdfDoc) {
       pdfDoc = _pdfDoc;
       renderPage(pageNum);
-    });
+    }
+
+
+    );
   </script>
 
    
