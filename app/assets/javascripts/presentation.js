@@ -156,9 +156,7 @@ var questions = [
   "How can effective design influence my startup?",
   "Can you explain your defintition of urban revitalization?",
   "Why did you only integrate up to b-k?",
-  "I love Startup Weekend! How can I get more involved?",
-  "NINE",
-  "TEN"
+  "I love Startup Weekend! How can I get more involved?"
 ];
 
 var colors = ["item-green","item-purple","item-orange", "item-blue"];
@@ -183,7 +181,9 @@ function createQuestion(){
     if (questionV <= questions.length - 1) {
       createQuestion();
     }
-  } , 3000 * randomnumber);
+  } , 5000 * randomnumber);
 }
 
-$(document).ready(createQuestion);
+$(document).ready(function() {
+  setTimeout(createQuestion, 10000);
+});
