@@ -52,6 +52,12 @@ $header-height: 90px;
   width: 75%;
 }
 
+.student-pres {
+  // Hack - students don't get the sidebar,
+  // so have the pres take up the full width
+  width: 100% !important;
+}
+
 .question-container {
   width: 25%;
   margin-top: 15px;
@@ -71,11 +77,6 @@ $header-height: 90px;
   .item-purple { background-color: #9C4274; }
 
    .item-orange { background-color: #EC663C; }
-}
-
-.pdf-container {
-  margin: 0 auto;
-  outline:1px solid black;
 }
 
 canvas {
@@ -123,6 +124,21 @@ canvas {
   }
 }
 
+.enter-question-container {
+  clear: both;
+  float: left;
+  margin-top: 30px;
+  width: 100%;
+  outline
+
+  form {
+    background: none;
+    border: none !important;
+  }
+}
+
+
+
 
 
 
@@ -139,11 +155,14 @@ canvas {
 
   h1 {
     font-weight: bold;
+    font-size: 2.5em;
     margin-bottom: 20px;
   }
 }
 
 .presentation-list {
+  padding-bottom: 60px;
+
   h1 {
     color: white;
   }
@@ -180,7 +199,9 @@ canvas {
 }
 
 .question-list {
-
+  h1 {
+    font-size: 2.3em;
+  }
 }
 
 .question-box {
@@ -205,6 +226,8 @@ canvas {
     width: 100%;
   }
 }
+
+
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;

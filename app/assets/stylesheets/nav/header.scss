@@ -4,6 +4,15 @@ header {
   color: $light-text;
   text-align: center;
 
+  .home-link {
+    font-weight: bold;
+
+    a:hover {
+      color: $green;
+      background-color: #262626;
+    }
+  }
+
   .links-container {
     float: right;
   }
