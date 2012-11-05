@@ -29,9 +29,10 @@ $header-height: 90px;
 .move-slide {
   color: #B3B3B3;
   display: inline-block;
-  font-size: 7em;
+  font-size: 6em;
   margin-right: 40px;
   line-height: $header-height - 20px;
+  margin-top: 5px;
 
   &:hover, &:active {
     color: $blue;
@@ -256,4 +257,9 @@ input, textarea, select, .uneditable-input {
 
 #mainImg > img {
   width:100%;
+}
+
+.question-icon {
+  float: left;
+  margin-right: 10px;
 }

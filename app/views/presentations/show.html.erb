@@ -20,8 +20,11 @@
       <div class="container">
 
         <div class="move-container">
-          <a href="#" class="move-slide" id="move-left" onclick="goPrevious()">&lt;</a>
-          <a href="#" class="move-slide" id="move-right" onclick="goNext()">&gt;</a>
+        
+          <a href="#" class="move-slide" id="move-left" onclick="goPrevious()">
+            <i class="icon-chevron-left"></i></a>
+          <a href="#" class="move-slide" id="move-right" onclick="goNext()">
+            <i class="icon-chevron-right"></i></a>
         </div>
 
         <div class="pageTracker-container">
@@ -32,8 +35,9 @@
 
           <%= link_to "End Presentation", dashboard_path, class: "btn btn-blue btn-end" %>
 
+          
           <div class="active-count">
-            <span class="visitor_hits">1</span> Users
+            <i class="icon-user"></i> <span class="visitor_hits">1</span> Users
           </div>
 
       </div>
@@ -52,6 +56,7 @@
     <h2>Questions:</h2>
 
    <div class="question-item item-blue">
+      <i class="icon-question-sign question-icon"></i>
       <p>How can I set up FollowAlong at my institution?</p>
     </div>
 
