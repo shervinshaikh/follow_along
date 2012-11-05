@@ -185,9 +185,9 @@ function createQuestion(){
   } , 5000 * randomnumber);
 }
 
-$(document).ready(function() {
-  setTimeout(createQuestion, 20000);
-});
+// $(document).ready(function() {
+//   setTimeout(createQuestion, 20000);
+// });
 
 $("#star-slide").click(function() {
   $(this).addClass("disabled");
