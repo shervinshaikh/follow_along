@@ -34,7 +34,7 @@
     msg = obj.text;
     var colors = ["item-green","item-purple","item-orange", "item-blue"];
     var color_class = colors[Math.floor(Math.random()*colors.length)];
-    var questionHHTML = "<div class='question-item question-icon " + color_class +"'><p>" + msg + "</p></div>";
+    var questionHHTML = "<div class='question-item " + color_class +"'><p>" + msg + "</p></div>";
     $("#questions").append(questionHHTML);
   }
 

@@ -175,7 +175,7 @@ function createQuestion(){
     }
 
     var questionText = questions[questionV];
-    var questionHHTML = "<div class='question-item question-icon " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
+    var questionHHTML = "<div class='question-item " + colors[colorV] +"'><p>" + questions[questionV] + "</p></div>";
     $("#questions").append(questionHHTML);
     $(".question-item").last().hide().fadeIn(750);
     questionV++;
