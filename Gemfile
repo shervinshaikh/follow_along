@@ -40,6 +40,9 @@ gem "less-rails"
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# Messing around with new Relic - Mike
+gem 'newrelic_rpm'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
