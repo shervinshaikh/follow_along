@@ -1,6 +1,15 @@
 <% provide(:title, 'Engage your students') %>
 
 
+<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+<script type="text/javascript">
+  var pusher = new Pusher('<%= Pusher.key %>'); // uses your API KEY
+  var channel = pusher.subscribe('test_channel');
+  channel.bind('greet', function(data) {
+    alert(data.greeting);
+  });
+</script>
+
 
 <section class="landing-main">
   <div class="container">
