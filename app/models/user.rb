@@ -39,8 +39,5 @@ class User < ActiveRecord::Base
     self.auth_token = SecureRandom.urlsafe_base64
   end
 
-  def sum_amounts(expenses)
-    expenses.map(&:amount).inject(&:+) || 0
-  end
 
 end
