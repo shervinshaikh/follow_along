@@ -9,7 +9,6 @@ html {
 
 body {
   background-color: #F0F0F0;
-  @extend %noise;
   color: $gray-text;
   font-family: $baseFontFamily;
   font-size: 13px;
@@ -28,21 +27,4 @@ body > .container {
 //------------------------------------
 .left { float: left }
 .right { float: right }
-// %noise { background: url('/images/noise.png') }
 .blue { background-color: #08c; }
-
-.quote:before,
-.quote:after {
-  content: "\"";
-  color: darken($med-gray, 10);
-  font-weight: normal;
-}
-
-.divider {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.feature-notice {
-  margin-bottom: 20px;
-}
